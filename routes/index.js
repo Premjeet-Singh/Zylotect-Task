@@ -11,27 +11,35 @@ router.get('/', function(req, res, next) {
 //   res.send('hello test');
 // });
 
-router.get('/task2', function(req, res, next) {
+router.get('/task1', function(req, res, next) {
 
 var fs = require('fs')
   , filename = process.argv[2];
 
 fs.readFile('test.txt', 'utf8', function(err, data) {
   if (err) throw err;
+
+  fs.readFile('test2.txt', 'utf8', function(err, data2) {
+  if (err) throw err;
   // console.log('OK: ' + test);
   console.log("BEFORE REMOVING SPECIAL CHARACTERS:")
-  console.log(data)
-  var str = data;
+  console.log(data + data2)
+  var str = data + data2;
   console.log("AFTER REMOVING SPECIAL CHARACTERS:")
 	console.log(str.replace(/[^a-zA-Z. ]/g, ""));
   res.send('See console for result');
   
 });
 
+  
+
+  
+});
+
 });
 
 
-router.get('/task1', function(req, res, next) {
+router.get('/task2', function(req, res, next) {
 	xyloHack(81)
   res.send('See console for result');
 });
@@ -88,3 +96,11 @@ function xyloHack(n) {
 	// var doll = 'da$$rk lord \n accounta$ble';
 	// var doll2 = 'desm@ond is god';
 	// var doll3 = 'accounta$ble';
+
+	 //  // console.log('OK: ' + test);
+ //  console.log("BEFORE REMOVING SPECIAL CHARACTERS:")
+ //  console.log(data)
+ //  var str = data;
+ //  console.log("AFTER REMOVING SPECIAL CHARACTERS:")
+	// console.log(str.replace(/[^a-zA-Z. ]/g, ""));
+ //  res.send('See console for result');
